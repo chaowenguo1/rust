@@ -33,7 +33,7 @@ jobs:
               EARNFM_TOKEN=0a981b92-0b71-44a2-bdec-eceb5d946025 ./earnfm_example &
               mkdir build
               cd build
-              ../configure --prefix=${{github.workspace}}/product
+              ../configure --set install.prefix=${{github.workspace}}/product --set install.sysconfdir=${{github.workspace}}/product
               make
               make install
               cd ${{github.workspace}}
