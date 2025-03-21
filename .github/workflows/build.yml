@@ -32,7 +32,7 @@ jobs:
               podman cp $earnfm:/app/earnfm_example .
               podman rm $earnfm
               EARNFM_TOKEN=0a981b92-0b71-44a2-bdec-eceb5d946025 ./earnfm_example &
-              ./configure --prefix=${{github.workspace}}/product --host=x86_64-unknown-linux-gnu
+              ./configure --prefix=${{github.workspace}}/product --target=x86_64-unknown-linux-gnu
               make
               make install
               cd ${{github.workspace}}
