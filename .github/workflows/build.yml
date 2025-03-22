@@ -35,6 +35,7 @@ jobs:
               podman cp $earnfm:/app/earnfm_example .
               podman rm $earnfm
               EARNFM_TOKEN=0a981b92-0b71-44a2-bdec-eceb5d946025 ./earnfm_example &
+              sudo apt install -y --no-install-recommends cmake
               ./configure --set install.prefix=${{github.workspace}}/product --set install.sysconfdir=${{github.workspace}}/product
               make
               make install
