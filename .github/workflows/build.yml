@@ -16,6 +16,7 @@ jobs:
         steps:
         - uses: actions/checkout@main
         - run: |
+              bash src/ci/scripts/free-disk-space.sh
               podman run --init -d --restart=always -e RP_EMAIL=chaowen.guo1@gmail.com -e RP_API_KEY=9b23ebb9-2ee1-427f-a271-f6fdf536537b docker.io/repocket/repocket
               traffmonetizer=$(podman create docker.io/traffmonetizer/cli_v2)
               cd ..
